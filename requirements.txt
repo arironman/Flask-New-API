@@ -1,2 +1,3 @@
 flask
 newsapi-python==0.2.6
+gunicorn
