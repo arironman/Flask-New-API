@@ -1,8 +1,8 @@
-from googletrans import Translator
+from translate import Translator
 
 
-# making connection with google translate api by creating its object
-translator = Translator()
+# creating translate object
+translator = Translator(to_lang="fr")
 
 
 def get_api_key(path='private/API KEY.txt'):
@@ -14,19 +14,19 @@ def get_api_key(path='private/API KEY.txt'):
     return key
 
 
-def text_translate(text, from_lang='en', to_lang='french'):
+def text_translate(text):
     '''
-        This Function return the translated text
+        return the translated text in french
     '''
     if not text:
         text = 'None'
-    translated_text = translator.translate(text, src=from_lang, dest=to_lang)
-    return translated_text.text
+    translation = translator.translate(text)
+    return translation
 
     
 def sort_article_data(article):
     '''
-        This function return the required data, by creating the new article dict
+        Return the New NEWS Article with required fields
     '''
     new_article = dict()
     new_article['title_en'] = article['title']
