@@ -23,4 +23,4 @@ def newApi():
     return jsonify(top_headlines)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
